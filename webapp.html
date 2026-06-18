@@ -1,191 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Learning Guitar</title>
-
-  <style>
-    body {
-      background-color: #0B1F3A;
-      color: #1E1E1E;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #071426;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    h1, h2 {
-      color: #D4A017;
-    }
-
-    nav {
-      background-color: black;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 12px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #D4A017;
-    }
-
-    .card {
-      background-color: #F5F7FA;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.4);
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #D4A017;
-      color: #0B1F3A;
-      padding: 12px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 760px;
-      height: 430px;
-      border-radius: 12px;
-    }
-
-    footer {
-      text-align: center;
-      color: white;
-      padding: 25px;
-    }
-  </style>
+  <title>Random Guitar Song Generator</title>
 </head>
+<body style="background:#0B1F3A; color:white; font-family:Arial; text-align:center; padding:40px;">
 
-<body>
+  <nav>
+    <a style="color:white; margin:15px;" href="index.html">Home</a>
+    <a style="color:white; margin:15px;" href="resume.html">Resume</a>
+    <a style="color:white; margin:15px;" href="scratch.html">Scratch Page</a>
+  </nav>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="resume.html">Resume</a>
-  <a href="webapp.html">Song Generator</a>
-</nav>
+  <h1 style="color:#D4A017;">Random Guitar Song Generator</h1>
+  <p>Click the button to get a popular song to learn on guitar.</p>
 
-<header>
-  <h1>Learning Guitar</h1>
-  <p>A beginner guide to guitars, practice, and songs worth learning.</p>
-  <a class="button" href="#beginner-guitars">Jump to Beginner Guitars</a>
-</header>
+  <button onclick="generateSong()" style="padding:15px 25px; background:#D4A017; border:none; border-radius:8px; font-weight:bold;">
+    Generate Song
+  </button>
 
-<div class="card">
-  <h2>How to Start Learning Guitar</h2>
-  <ol>
-    <li>Choose your guitar type
-      <ul>
-        <li>Electric guitar</li>
-        <li>Acoustic guitar</li>
-        <li>Classical guitar</li>
-      </ul>
-    </li>
-    <li>Learn basic chords
-      <ul>
-        <li>G</li>
-        <li>C</li>
-        <li>D</li>
-        <li>Em</li>
-      </ul>
-    </li>
-    <li>Practice beginner songs
-      <ul>
-        <li>Wonderwall</li>
-        <li>Riptide</li>
-        <li>Knockin' on Heaven's Door</li>
-      </ul>
-    </li>
-  </ol>
-</div>
-
-<div class="card" id="beginner-guitars">
-  <h2>Two Good Beginner Guitars</h2>
-
-  <h3>Squier 40th Anniversary Stratocaster</h3>
-  <img src="squier.jpg" alt="Squier 40th Anniversary Stratocaster">
-  <p>This is a great beginner electric guitar because it has a comfortable neck, classic Stratocaster sound, and works well for rock, blues, pop, and worship music.</p>
-
-  <h3>Yamaha Acoustic Electric Guitar</h3>
-  <img src="acoustic.jpg" alt="Yamaha acoustic electric guitar">
-  <p>This is a strong beginner acoustic option because it has a warm sound, good playability, and built-in electronics for plugging into an amp.</p>
-</div>
-
-<div class="card">
-  <h2>Beginner Guitar Video</h2>
-  <p>This video is useful for learning guitar basics.</p>
-
-  <iframe src="https://www.youtube.com/embed/hOCiIRu5Mdg" 
-    title="Guitar YouTube Video" 
-    allowfullscreen>
-  </iframe>
-</div>
-
-<div class="card">
-  <h2>Interactive Tableau Graph</h2>
-  <p>This interactive graph compares popular beginner guitar songs by difficulty.</p>
-
-  <div class='tableauPlaceholder' id='viz1710000000000' style='position: relative'>
-    <noscript>
-      <a href='#'>
-        <img alt='Tableau Graph' src='https://public.tableau.com/static/images/Be/BeginnerGuitarSongs/Sheet1/1_rss.png' style='border: none' />
-      </a>
-    </noscript>
-    <object class='tableauViz' style='display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-      <param name='embed_code_version' value='3' />
-      <param name='site_root' value='' />
-      <param name='name' value='BeginnerGuitarSongs/Sheet1' />
-      <param name='tabs' value='no' />
-      <param name='toolbar' value='yes' />
-      <param name='static_image' value='https://public.tableau.com/static/images/Be/BeginnerGuitarSongs/Sheet1/1.png' />
-      <param name='animate_transition' value='yes' />
-      <param name='display_static_image' value='yes' />
-      <param name='display_spinner' value='yes' />
-      <param name='display_overlay' value='yes' />
-      <param name='display_count' value='yes' />
-      <param name='language' value='en-US' />
-    </object>
+  <div id="result" style="background:white; color:black; margin:30px auto; padding:25px; max-width:500px; border-radius:12px;">
+    Your song will appear here.
   </div>
 
-  <script type='text/javascript'>
-    var divElement = document.getElementById('viz1710000000000');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width='100%';
-    vizElement.style.height='600px';
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-</div>
+  <script>
+    const songs = [
+      "Wonderwall - Oasis",
+      "Riptide - Vance Joy",
+      "Knockin' on Heaven's Door - Bob Dylan",
+      "Take Me Home, Country Roads - John Denver",
+      "Sweet Home Alabama - Lynyrd Skynyrd",
+      "Hotel California - Eagles",
+      "Good Riddance - Green Day"
+    ];
 
-<footer>
-  <p>Back to <a style="color:#D4A017;" href="index.html">Home</a></p>
-</footer>
+    function generateSong() {
+      const randomIndex = Math.floor(Math.random() * songs.length);
+      document.getElementById("result").innerHTML = songs[randomIndex];
+    }
+  </script>
 
 </body>
 </html>
